@@ -2,13 +2,14 @@ package com.example.recyclerview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import ContactAdapter.ContactsAdapter;
+import adapter.ContactsAdapter;
 import model.Contacts;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         ContactsAdapter contactsAdapter = new ContactsAdapter(this, contactsList);
         recyclerView.setAdapter(contactsAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
 
     }
 }
